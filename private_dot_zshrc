@@ -130,4 +130,14 @@ unset key
 
 alias czm='chezmoi'
 
+# go
+if [[ $(which go) == "" ]]; then
+  export GOROOT="/usr/local/go"
+else 
+  export GOROOT=$(go env GOROOT)
+fi
+
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+
 export EDITOR='nvim'
