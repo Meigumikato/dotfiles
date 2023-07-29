@@ -131,7 +131,7 @@ unset key
 alias czm='chezmoi'
 
 # go
-if [[ $(which go) == "" ]]; then
+if [[ $(which go) == "go not found" ]]; then
   export GOROOT="/usr/local/go"
 else 
   export GOROOT=$(go env GOROOT)
