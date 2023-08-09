@@ -81,13 +81,6 @@ return {
   -- },
 
   {
-    "zbirenbaum/copilot.lua",
-    opts = function(_, opts)
-      opts.suggestion.enable = true
-    end,
-  },
-
-  {
     "Meigumikato/opensips.nvim",
     ft = "opensips",
   },
