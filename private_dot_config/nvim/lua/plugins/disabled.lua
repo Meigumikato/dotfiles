@@ -1,6 +1,6 @@
 return {
-  {
-    "SmiteshP/nvm-navic",
-    enabled = false,
-  },
+  -- {
+  --   "SmiteshP/nvm-navic",
+  --   enabled = false,
+  -- },
 }
