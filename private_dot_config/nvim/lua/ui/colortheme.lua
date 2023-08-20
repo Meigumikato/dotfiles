@@ -15,6 +15,7 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = {
+      -- transparent_background = true,
       color_overrides = {
         mocha = {
           base = "#000000",
@@ -29,19 +30,21 @@ return {
     lazy = true,
     priority = 1000,
     opts = {
-      style = "night",
+      style = "storm",
       -- transparent = true,
     },
   },
   {
     "Meigumikato/moonbow.nvim",
+    priority = 1000,
     lazy = true,
   },
   {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "moonbow",
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
+      -- colorscheme = "catppuccin",
     },
   },
 }

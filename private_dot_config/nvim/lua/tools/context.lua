@@ -1,11 +1,5 @@
 return {
   {
-
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPost",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
-  {
     "telescope.nvim",
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
@@ -51,7 +45,7 @@ return {
 
   { "folke/zen-mode.nvim", cmd = "ZenMode" },
 
-  { "simrat39/symbols-outline.nvim", lazy = true },
+  -- { "simrat39/symbols-outline.nvim", lazy = true },
 
   -- {
   --   "HiPhish/nvim-ts-rainbow2",
@@ -76,7 +70,6 @@ return {
   --   event = "VeryLazy",
   --   opts = function(_, opts)
   --     opts.disabled_filetypes = { "NeoTree", "qf", "netrw", "NvimTree", "lazy", "mason" }
-  --     -- opts.resetting_keys = { ["y"] = { "v" } }
   --   end,
   -- },
 

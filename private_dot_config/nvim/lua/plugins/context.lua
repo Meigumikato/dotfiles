@@ -1,6 +1,16 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter-context",
+    keys = {
+      {
+        "]c",
+        function()
+          require("treesitter-context").go_to_context()
+        end,
+        desc = "got to next context",
+        { slient = true },
+      },
+    },
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   {
