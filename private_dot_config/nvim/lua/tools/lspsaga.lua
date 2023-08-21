@@ -1,20 +1,18 @@
 return {
-
   {
     "neovim/nvim-lspconfig",
     init = function()
       local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- keys[#keys + 1] = { "K", false }
-      --     if client.name ~= "taplo" or client.name ~= "rust_analyzer" then
-      --       vim.keymap.set("n", "K", "<CMD>Lspsaga hover_doc<CR>", { buffer = buffer, desc = "Lspsaga hover_doc" })
-      --     end
-      --
+      keys[#keys + 1] = {
+        "K",
+        "<CMD>Lspsaga hover_doc<CR>",
+      }
+
       keys[#keys + 1] = { "gd", "<CMD>Lspsaga goto_definition<CR>" }
       keys[#keys + 1] = { "gr", "<CMD>Lspsaga finder<CR>" }
-      keys[#keys + 1] = { "gD", false }
-
+      keys[#keys + 1] = { "gD", "<CMD>Lspsaga goto_type_definition" }
       keys[#keys + 1] = { "<space>ca", "<CMD>Lspsaga code_action<CR>" }
-      keys[#keys + 1] = { "<space>ca", "<CMD>Lspsaga code_action<CR>" }
+      keys[#keys + 1] = { "<space>cA", "<CMD>Lspsaga code_action<CR>" }
       keys[#keys + 1] = { "<space>cr", "<CMD>Lspsaga rename<CR>" }
       keys[#keys + 1] = { "<space>cp", "<CMD>Lspsaga peek_definition<CR>" }
       keys[#keys + 1] = { "<space>ci", "<CMD>Lspsaga incoming_calls<CR>" }
@@ -37,11 +35,6 @@ return {
         "<CMD>Lspsaga  show_cursor_diagnostics<CR>",
       }
       keys[#keys + 1] = { "gI", "<CMD>Lspsaga finder imp<CR>" }
-      keys[#keys + 1] = { "[e", false }
-      keys[#keys + 1] = { "]e", false }
-      keys[#keys + 1] = { "[w", false }
-      keys[#keys + 1] = { "]w", false }
-      keys[#keys + 1] = { "[d", false }
 
       keys[#keys + 1] = {
         "]d",
@@ -57,6 +50,7 @@ return {
         function()
           require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.WARN })
         end,
+        desc = "Lspsaga diagnostic_next_warn",
       }
 
       keys[#keys + 1] = {
@@ -64,6 +58,7 @@ return {
         function()
           require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.WARN })
         end,
+        desc = "Lspsaga diagnostic_prev_warn",
       }
 
       keys[#keys + 1] = {
@@ -71,6 +66,7 @@ return {
         function()
           require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
         end,
+        desc = "Lspsaga diagnostic_next_error",
       }
 
       keys[#keys + 1] = {
@@ -78,6 +74,7 @@ return {
         function()
           require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
         end,
+        desc = "Lspsaga diagnostic_prev_error",
       }
     end,
   },
